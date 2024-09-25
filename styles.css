@@ -90,6 +90,7 @@ html, body {
   .footer img {
     width: 100%;
     max-width: 1800px;
+    background-size:cover;
     height: 265px; /* Set the height explicitly */
     object-fit: cover; /* Ensure the image scales nicely */
   }
