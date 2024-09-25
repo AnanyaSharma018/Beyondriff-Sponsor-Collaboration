@@ -1,0 +1,122 @@
+/* General styles */
+html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Hero Section */
+  .hero {
+    background-image: url('header.png');
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    max-width: 1540px;
+    height: 595px;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+  }
+  
+  /* Add opacity/overlay effect */
+  .hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Black overlay with 50% opacity */
+    z-index: 1;
+  }
+  
+  /* Hero Text on Shadow */
+  .hero h1 {
+    position: relative;
+    z-index: 2; /* Ensure text appears above the shadow */
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: center;
+    margin: 0;
+  }
+  
+  /* Gallery Section */
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 40px;
+  }
+  
+  .image-box {
+    position: relative;
+    overflow: hidden; /* Ensure text stays within the image boundaries */
+  }
+  
+  .image-box img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  .image-box h3 {
+    position: absolute;
+    bottom: 10px; /* Text is now at the bottom of the image */
+    left: 50%;
+    transform: translateX(-50%); /* Center text horizontally */
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    z-index: 2;
+    //background: rgba(0, 0, 0, 0.5); /* Optional background shadow under the text for better visibility */
+    padding: 5px 10px;
+    white-space: nowrap; /* Keep the text on one line */
+  }
+  
+  /* Footer */
+  .footer {
+    text-align: center;
+    margin: 50px 0;
+  }
+  
+  .footer img {
+    width: 100%;
+    max-width: 1800px;
+    height: 265px; /* Set the height explicitly */
+    object-fit: cover; /* Ensure the image scales nicely */
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 1024px) {
+    .gallery {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 2rem;
+    }
+  
+    h3 {
+      font-size: 1rem;
+    }
+  
+    .gallery {
+      grid-template-columns: 1fr;
+      padding: 20px;
+    }
+  
+    .footer img {
+      height: 200px; /* Adjust height for smaller devices */
+    }
+  }
+  
